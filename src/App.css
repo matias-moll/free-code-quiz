@@ -1,0 +1,54 @@
+/* Variables*/
+:root {
+  --topbar-height: 50px;
+
+  --box-shadow-standard: 0 5px 10px rgba(0,0,0,0.10), 0 3px 3px rgba(0,0,0,0.15);
+}
+
+/* Base Styles*/
+
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+}
+
+body{
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #fff;
+  color:#000;
+  font-size:15px;
+  line-height:1.5;
+}
+
+body a{
+  transition: 0.4s all ease;
+  -webkit-transition: 0.4s all ease; 
+  -moz-transition: 0.4s all ease;
+  -o-transition: 0.4s all ease;
+  -ms-transition: 0.4s all ease;
+  text-decoration: none;
+}
+
+.hidden{
+  visibility: hidden;
+}
+
+.not-display{
+  display:none;
+}
+
+/* Topbar*/
+
+#topbar{
+  top:0;
+  position:sticky;
+  height:var(--topbar-height);
+  width:100%;
+  background-color:#a1cbff;
+  box-shadow: var(--box-shadow-standard);
+  display:flex;
+  z-index:100;
+  align-items:center;
+  color:black;
+}
