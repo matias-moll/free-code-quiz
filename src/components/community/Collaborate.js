@@ -1,10 +1,10 @@
 import React, { Component } from 'react'
 
-export default class Scoreboard extends Component {
+export default class Collaborate extends Component {
   render() {
     return (
       <div>
-        <h1>Scoreboard</h1>
+        <h1>Collaborate</h1>
       </div>
     )
   }

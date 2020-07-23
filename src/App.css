@@ -1,7 +1,5 @@
 /* Variables*/
 :root {
-  --topbar-height: 50px;
-
   --box-shadow-standard: 0 5px 10px rgba(0,0,0,0.10), 0 3px 3px rgba(0,0,0,0.15);
 }
 
@@ -39,16 +37,26 @@ body a{
 }
 
 /* Topbar*/
+#topbar .navbar{
+  padding-left: 10%;
+  padding-right: 10%;
+}
 
-#topbar{
-  top:0;
-  position:sticky;
-  height:var(--topbar-height);
+.navbar-nav .nav-link {
+  margin: auto 1em;
+}
+
+/* Main Container */
+.app{
+  background-color:#1E1E1E;
+  height:100vh;
   width:100%;
-  background-color:#a1cbff;
-  box-shadow: var(--box-shadow-standard);
-  display:flex;
-  z-index:100;
-  align-items:center;
-  color:black;
+}
+
+main{
+  width:80%;
+  margin:auto;
+  display:grid;
+  grid-auto-rows: max-content;
+  color:white;
 }
