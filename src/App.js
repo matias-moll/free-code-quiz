@@ -7,11 +7,17 @@ import Collaborate from './components/community/Collaborate'
 import Scoreboard from './scoreboard/Scoreboard'
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import './App.css';
+import './Background.css';
 
 function App() {
   return (
     <Router>
       <div className="app">
+        <section className="wrapper">
+          <div id="stars"></div>
+          <div id="stars2"></div>
+          <div id="stars3"></div>
+        </section>
         <Topbar></Topbar>
         <main>
           <Switch>
