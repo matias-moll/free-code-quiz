@@ -1,10 +1,10 @@
 import React from 'react';
 import Topbar from './components/layout/Topbar'
 import Quizzes from './components/quizzes/Quizzes'
-import EndGame from './components/quizzes/EndGame'
+import EndGame from './components/endgame/EndGame'
 import About from './components/community/About'
 import Collaborate from './components/community/Collaborate'
-import Scoreboard from './components/quizzes/Scoreboard'
+import Scoreboard from './scoreboard/Scoreboard'
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import './App.css';
 
