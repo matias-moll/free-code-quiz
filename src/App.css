@@ -28,6 +28,10 @@ body a{
   text-decoration: none;
 }
 
+h1{
+  margin:0.75em auto;
+}
+
 .hidden{
   visibility: hidden;
 }
@@ -115,8 +119,19 @@ main{
 }
 
 
+/* Collaborate */
+#question-input{
+  margin:2.5em auto;
+}
+.input-pair{
+  display:flex;
+  flex-direction:column;
+  margin-bottom:0.6em;
+}
 
-
+#btn-collaborate{
+  margin-top:1em;
+}
 
 
 
