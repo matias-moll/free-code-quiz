@@ -11,17 +11,6 @@ export default class Question extends Component {
     this.setState({showAnswer:true, optionSelected : indexSelected});
   }
 
-  getClassWhenSelectedOpt = (indexSelected, correctAnswer) => {
-    if(indexSelected === this.state.optionSelected){
-      if(indexSelected === correctAnswer){
-        return "correct-answer";
-      }else{
-        return "incorrect-answer";
-      }
-    }
-    return "";
-  }
-
   render() {
     const {question} = this.props;
     return (
@@ -33,9 +22,10 @@ export default class Question extends Component {
             {question.options.map((option, index) => (
               this.state.showAnswer ?
               (
-                <div key={index} className={"answer-option " + 
-                this.getClassWhenSelectedOpt.bind(this, index, question.correctAnswer) }>
-                  <span>{option}</span>
+                <div key={index} 
+                className={"answer-option " + (index === question.correctAnswer ? 
+                  "correct-answer" : (index === this.state.optionSelected)? "incorrect-answer": "")}>
+                  <span>{option} </span>
                 </div>
               ):
               (
@@ -44,9 +34,18 @@ export default class Question extends Component {
               </div>
               )
             ))}
+            {this.state.showAnswer && (
+            <button id="btn-next-question" className="btn btn-light">Next Question</button>
+            )}
           </div>
+          
         </div>
-        <Answer/>
+        <br/>
+        {this.state.showAnswer &&
+        <Answer answerDetails={{
+            answerExplanation:question.answerExplanation, 
+            answerHTML:question.answerHTML
+          }}/>}
       </div>
     )
   }
