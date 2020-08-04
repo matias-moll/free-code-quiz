@@ -1,41 +1,53 @@
 import React, { Component } from 'react'
+import Answer from './Answer'
 
 export default class Question extends Component {
   state = {
-    question: "Which of the following methods allow you to add an element to myArray at the end?",
-    options: [
-      "myArray.pop(element)",
-      "myArray.shift(element)",
-      "myArray.unshift(element)",
-      "myArray.push(element)",
-    ],
-    correctAnswer: 3,
+    showAnswer:false,
+    optionSelected: -1
   }
 
   onOptionSelected = (indexSelected) => {
-    if(this.state.correctAnswer === indexSelected){
-      alert("Correct Answer");
+    this.setState({showAnswer:true, optionSelected : indexSelected});
+  }
+
+  getClassWhenSelectedOpt = (indexSelected, correctAnswer) => {
+    if(indexSelected === this.state.optionSelected){
+      if(indexSelected === correctAnswer){
+        return "correct-answer";
+      }else{
+        return "incorrect-answer";
+      }
     }
-    else{
-      alert("Wrong Answer");
-    }
+    return "";
   }
 
   render() {
+    const {question} = this.props;
     return (
       <div>
         <h4>Question</h4>
         <div className="question-card">
-          <h6 className="card-title">{this.state.question}</h6>
+          <h6 className="card-title">{question.questionDesc}</h6>
           <div className="answer-options">
-            {this.state.options.map((option, index) => (
+            {question.options.map((option, index) => (
+              this.state.showAnswer ?
+              (
+                <div key={index} className={"answer-option " + 
+                this.getClassWhenSelectedOpt.bind(this, index, question.correctAnswer) }>
+                  <span>{option}</span>
+                </div>
+              ):
+              (
               <div key={index} className="answer-option" onClick={this.onOptionSelected.bind(this, index)}>
                 <span>{option}</span>
               </div>
+              )
             ))}
           </div>
         </div>
-    </div>
+        <Answer/>
+      </div>
     )
   }
 }
