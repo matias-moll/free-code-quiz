@@ -7,12 +7,20 @@ export default class Question extends Component {
     optionSelected: -1
   }
 
-  onOptionSelected = (indexSelected) => {
+  onOptionSelected = (indexSelected, userAnsweredCallback) => {
     this.setState({showAnswer:true, optionSelected : indexSelected});
   }
 
+  onNextQuestionClicked = (getNextQuestionCallback) =>{
+    this.setState({
+      ...this.state, 
+      showAnswer: false});
+
+    getNextQuestionCallback();
+  }
+
   render() {
-    const {question} = this.props;
+    const {question, getNextQuestionCallback} = this.props;
     return (
       <div>
         <h4>Question</h4>
@@ -34,18 +42,20 @@ export default class Question extends Component {
               </div>
               )
             ))}
-            {this.state.showAnswer && (
-            <button id="btn-next-question" className="btn btn-light">Next Question</button>
-            )}
+            
           </div>
-          
         </div>
         <br/>
         {this.state.showAnswer &&
-        <Answer answerDetails={{
+        <React.Fragment>
+          <Answer answerDetails={{
             answerExplanation:question.answerExplanation, 
             answerHTML:question.answerHTML
-          }}/>}
+          }}/>
+
+          <button id="btn-next-question" className="btn btn-light mt-3" onClick={this.onNextQuestionClicked.bind(this, getNextQuestionCallback)}>Next Question</button>
+        </React.Fragment>
+        }
       </div>
     )
   }

@@ -2,30 +2,38 @@ import React, { Component } from 'react'
 import Question from './Question'
 import Result from './Result'
 import Lywo from './Lywo'
+import { getQuestions } from './QuestionsState'
 
 export default class Quizzes extends Component {
   state= {
-    questions: [
-      {
-        questionDesc: "Which of the following methods allow you to add an element to myArray at the end?",
-        options: [
-          "myArray.pop(element)",
-          "myArray.shift(element)",
-          "myArray.unshift(element)",
-          "myArray.push(element)"
-        ],
-        correctAnswer: 3,
-        answerExplanation: "The push() method adds new items to the end of an array, and returns the new length.",
-        answerHTML: ""
-      }
-    ]
+    questions: getQuestions(),
+    currentQuestionIndex: 0,
+    userAnswered:false
+  }
+
+  onUserAnswered = () =>{
+    this.setState({
+      ...this.state, 
+      userAnswered:true})
+  }
+
+  getNextQuestionCallback = () =>{
+    let nextQuestionIndex = this.state.currentQuestionIndex+1;
+    if(nextQuestionIndex >= this.state.questions.length){
+      alert("There are no more questions! Thanks for playing");
+    }else{
+      this.setState({
+        ...this.state, 
+        currentQuestionIndex: nextQuestionIndex })
+    }
+    
   }
 
   render() {
     return (
       <div>
         <Lywo/>
-        <Question question={this.state.questions[0]}/>
+        <Question question={this.state.questions[this.state.currentQuestionIndex]}  getNextQuestionCallback={this.getNextQuestionCallback} />
         <Result/>
       </div>
     )
