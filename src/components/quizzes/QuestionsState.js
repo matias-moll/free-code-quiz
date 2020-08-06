@@ -24,7 +24,7 @@ export function getQuestions(){
         "consoleLog(myName.value)"
       ],
       correctAnswer: 2,
-      hint: "console is an object in JS that has a lot of functions you can use!",
+      hint: "There is an object console in JS that has a lot of functions you can use!",
       answerExplanation: "The console.log() method allows you to log into the console whatever you put as a parameter.",
       answerHTML: ""
     },
@@ -44,15 +44,15 @@ export function getQuestions(){
     },
     {
       category: "Javascript",
-      questionDesc: "How do you remove the property 'boring' from the object myself?",
+      questionDesc: "How do you remove the property 'boringTask' from the object myself?",
       options: [
-        "delete boring from myself",
-        "delete myself.boring",
-        "myself.boring delete",
-        "delete(boring)"
+        "delete boringTask from myself",
+        "delete myself.boringTask",
+        "myself.boringTask delete",
+        "delete(boringTask)"
       ],
       correctAnswer: 1,
-      hint: "delete is an operator that can be used on objects.",
+      hint: "The operator delete can be used on objects to remove properties from them.",
       answerExplanation: "The way to remove a property from an object is with the delete operator followed by the object.property you want to remove.",
       answerHTML: ""
     },

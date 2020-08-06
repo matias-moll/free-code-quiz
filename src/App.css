@@ -25,7 +25,11 @@ body a{
   -moz-transition: 0.4s all ease;
   -o-transition: 0.4s all ease;
   -ms-transition: 0.4s all ease;
-  text-decoration: none;
+  text-decoration: none !important;
+}
+
+a{
+  text-decoration: none !important;
 }
 
 h1{
@@ -94,7 +98,7 @@ main{
   border:1px solid white;
   font-size:large;
   box-shadow: 0 -2px 10px rgba(0, 0, 0, 1);
-  background-color: #2F2F2F;
+  background-color: rgba(47, 47, 47, 0.4);
 }
 
 .answer-options{
@@ -161,8 +165,19 @@ main{
   margin-bottom:0.6em;
 }
 
+.input-section{
+  margin-top: 1.5em;
+}
+
+.flexed-space-between{
+  display: flex;
+  justify-content: space-between;
+}
+
 #btn-collaborate{
   margin-top:1em;
+  font-weight: 700;
+  font-size: large;
 }
 
 

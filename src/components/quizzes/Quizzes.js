@@ -7,14 +7,7 @@ import { getQuestions } from './QuestionsState'
 export default class Quizzes extends Component {
   state= {
     questions: getQuestions(),
-    currentQuestionIndex: 0,
-    userAnswered:false
-  }
-
-  onUserAnswered = () =>{
-    this.setState({
-      ...this.state, 
-      userAnswered:true})
+    currentQuestionIndex: 0
   }
 
   getNextQuestionCallback = () =>{
@@ -32,7 +25,7 @@ export default class Quizzes extends Component {
   render() {
     return (
       <div>
-        <Lywo/>
+        <Lywo hint={this.state.questions[this.state.currentQuestionIndex].hint}/>
         <Question question={this.state.questions[this.state.currentQuestionIndex]}  getNextQuestionCallback={this.getNextQuestionCallback} />
         <Result/>
       </div>
