@@ -25,7 +25,7 @@ export default class Question extends Component {
       <div>
         <h4>Question</h4>
         <div className="question-card">
-          <h6 className="card-title">{question.questionDesc}</h6>
+          <p>{question.questionDesc}</p>
           <div className="answer-options">
             {question.options.map((option, index) => (
               this.state.showAnswer ?
@@ -45,16 +45,23 @@ export default class Question extends Component {
             
           </div>
         </div>
-        <br/>
         {this.state.showAnswer &&
-        <React.Fragment>
+          <div className="flex-column">
+            <div id="result-next-container">
+              <h4>Answer was <strong className="correct-result-text">Correct </strong> <span role="img" aria-label="Congratz">🎉</span></h4>
+              <button id="btn-next-question" className="btn btn-light" 
+              onClick={this.onNextQuestionClicked.bind(this, getNextQuestionCallback)}>
+                Next Question
+              </button>
+            </div>
+            
+          
+          
           <Answer answerDetails={{
             answerExplanation:question.answerExplanation, 
             answerHTML:question.answerHTML
           }}/>
-
-          <button id="btn-next-question" className="btn btn-light mt-3" onClick={this.onNextQuestionClicked.bind(this, getNextQuestionCallback)}>Next Question</button>
-        </React.Fragment>
+          </div>
         }
       </div>
     )

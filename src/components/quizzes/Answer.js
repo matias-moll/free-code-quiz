@@ -5,7 +5,7 @@ export default class Answer extends Component {
     const {answerExplanation, answerHTML} = this.props.answerDetails;
     return (
       <div>
-        <h4>Answer Explanation</h4>
+        <h4>Explanation</h4>
         <div className="question-card">
           <p>{answerExplanation}</p>
           {answerHTML}
