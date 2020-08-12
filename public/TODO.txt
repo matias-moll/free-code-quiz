@@ -1,12 +1,8 @@
 TODO:
 
-- Add functionality to next question.
-
 - Add integration to show code snippets in the answers.
 
 - Add animations to transition from user selection to answer
-
-- Add interactions with Lywo
 
 - Add better styling for lywos text.
 
@@ -15,3 +11,5 @@ TODO:
 - Add Twitter integration
 
 - Work on LeaderBoard
+
+- Make the site usable for desktop.
