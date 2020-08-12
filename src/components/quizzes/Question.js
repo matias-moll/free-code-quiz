@@ -4,11 +4,16 @@ import Answer from './Answer'
 export default class Question extends Component {
   state = {
     showAnswer:false,
-    optionSelected: -1
+    optionSelected: -1,
+    correctAnswer:false,
   }
 
-  onOptionSelected = (indexSelected, userAnsweredCallback) => {
-    this.setState({showAnswer:true, optionSelected : indexSelected});
+  isAnswerCorrect = () =>{
+    return this.optionSelected
+  }
+  onOptionSelected = (indexSelected, correctAnswerIndex) => {
+    this.setState({showAnswer:true, optionSelected : indexSelected, 
+                  correctAnswer: indexSelected===correctAnswerIndex});
   }
 
   onNextQuestionClicked = (getNextQuestionCallback) =>{
@@ -23,7 +28,7 @@ export default class Question extends Component {
     const {question, getNextQuestionCallback} = this.props;
     return (
       <div>
-        <h4>Question</h4>
+        <h3>Question</h3>
         <div className="question-card">
           <p>{question.questionDesc}</p>
           <div className="answer-options">
@@ -37,7 +42,7 @@ export default class Question extends Component {
                 </div>
               ):
               (
-              <div key={index} className="answer-option" onClick={this.onOptionSelected.bind(this, index)}>
+              <div key={index} className="answer-option" onClick={this.onOptionSelected.bind(this, index, question.correctAnswer)}>
                 <span>{option}</span>
               </div>
               )
@@ -48,7 +53,11 @@ export default class Question extends Component {
         {this.state.showAnswer &&
           <div className="flex-column">
             <div id="result-next-container">
-              <h4>Answer was <strong className="correct-result-text">Correct </strong> <span role="img" aria-label="Congratz">🎉</span></h4>
+              <h4>Answer is 
+                { this.state.correctAnswer ?  
+                <strong className="correct-result-text"> Correct <span role="img" aria-label="Congratz">🎉</span></strong> 
+                :<strong className="incorrect-result-text"> Incorrect <span role="img" aria-label="Congratz">❌</span></strong> }
+              </h4>
               <button id="btn-next-question" className="btn btn-light" 
               onClick={this.onNextQuestionClicked.bind(this, getNextQuestionCallback)}>
                 Next Question

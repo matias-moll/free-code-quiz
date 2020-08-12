@@ -23,7 +23,7 @@ export default function Topbar() {
             <a className="nav-link" href="/about">About</a>
           </li>
           <li className="nav-item active">
-            <a className="nav-link" href="/collaborate">Collaborate</a>
+            <a className="nav-link" href="/contribute">Contribute</a>
           </li>
         </ul>
       </div>

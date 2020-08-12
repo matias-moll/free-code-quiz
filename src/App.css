@@ -1,6 +1,11 @@
 /* Variables*/
 :root {
   --box-shadow-standard: 0 5px 10px rgba(0,0,0,0.10), 0 3px 3px rgba(0,0,0,0.15);
+  --background-color-for-text: rgba(47, 47, 47, 0.4);
+  --correct-answer-color: #6dfcb7;
+  --incorrect-answer-color: #fc806d;
+  --primary-color: #d9b064;
+  --primary-darker-color: #b5852d;
 }
 
 /* Base Styles*/
@@ -32,6 +37,14 @@ a{
   text-decoration: none !important;
 }
 
+p a{
+  color: var(--primary-color);
+}
+
+p a:hover{
+  color:var(--primary-darker-color);
+}
+
 h1{
   margin:0.75em auto;
 }
@@ -42,6 +55,14 @@ h1{
 
 .not-display{
   display:none;
+}
+
+.page-title{
+  border-bottom: solid 2px var(--primary-color);
+}
+
+.primary-color{
+  color: var(--primary-color);
 }
 
 /* Topbar*/
@@ -62,7 +83,7 @@ h1{
 
 @media (max-width:980px){
   #navbarNav{
-    background-color: rgba(47, 47, 47, 0.4);
+    background-color: var(--background-color-for-text);
   }
 }
 /* Main Container */
@@ -87,7 +108,7 @@ main{
 
 #lywo-message{
   margin-top:0.8em;
-  background-color: rgba(47, 47, 47, 0.4);
+  background-color: var(--background-color-for-text);
   padding: 0.5em 1.5em;
   border-radius: 25px;
 }
@@ -98,10 +119,10 @@ main{
 .question-card{
   padding:20px;
   max-width:400px;
-  border:1px solid white;
+  border:1px solid var(--primary-color);
   font-size:large;
   box-shadow: 0 -2px 10px rgba(0, 0, 0, 1);
-  background-color: rgba(47, 47, 47, 0.4);
+  background-color: var(--background-color-for-text);
 }
 
 .answer-options{
@@ -129,12 +150,20 @@ main{
 }
 
 .correct-answer{
-  background-color:#6dfcb7;
+  background-color: var(--correct-answer-color);
 }
 
 .incorrect-answer{
-  background-color:#fc806d;
+  background-color: var(--incorrect-answer-color);
 }
+
+.correct-result-text{
+  color:var(--correct-answer-color);
+}
+.incorrect-result-text{
+  color:var(--incorrect-answer-color);
+}
+
 
 #btn-next-question{
   border-radius:25px;
@@ -152,9 +181,8 @@ main{
   display:flex;
   flex-direction:column;
 }
-
-.correct-result-text{
-  color:#6dfcb7;
+.flex{
+  display:flex;
 }
 
 
@@ -181,9 +209,23 @@ main{
   margin-top:1em;
   font-weight: 700;
   font-size: large;
+  
+}
+.btn-primary{
+  background-color: #b5852d;
+  border-color:#836121;
+  font-weight: 600;
+}
+.btn-primary:hover{
+  background-color: #a37622;
+  border-color:#88621b;
 }
 
+#btn-github>a{
+  color: white;
+}
 
+/* About */
 
 
 

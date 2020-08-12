@@ -3,7 +3,7 @@ import Topbar from './components/layout/Topbar'
 import Quizzes from './components/quizzes/Quizzes'
 import EndGame from './components/endgame/EndGame'
 import About from './components/community/About'
-import Collaborate from './components/community/Collaborate'
+import Contribute from './components/community/Contribute'
 import Scoreboard from './scoreboard/Scoreboard'
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import './App.css';
@@ -24,7 +24,7 @@ function App() {
             <Route exact path="/" component={Quizzes}></Route>
             <Route exact path="/endgame" component={EndGame}></Route>
             <Route exact path="/scoreboard" component={Scoreboard}></Route>
-            <Route exact path="/collaborate" component={Collaborate}></Route>
+            <Route exact path="/contribute" component={Contribute}></Route>
             <Route exact path="/about" component={About}></Route>
           </Switch>
         </main>
