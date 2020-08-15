@@ -5,11 +5,14 @@ export default class Lywo extends Component {
   state={
     showHint: false
   }
+
   componentDidUpdate(prevProps) {
     // If the hint changed -> we don´t show it until the user asks for it.
-    if (this.props.hint !== prevProps.hint) {
-      this.setState({showHint:false});
+    let hintChanged = (this.props.hint !== prevProps.hint);
+    if(hintChanged){
+      this.setState({showHint:!hintChanged});
     }
+    
   }
 
   onLywoClicked = event =>{
@@ -27,7 +30,9 @@ export default class Lywo extends Component {
              You can tap on me for hints.</span>)}
           </p>
         </div>
-        <a href="!#" onClick={this.onLywoClicked}><img src={lywoImg} alt="Lywo Character" style={{width:150, height:150}}/></a>
+        <a id="lywo-image" href="!#" onClick={this.onLywoClicked}>
+          <img src={lywoImg} alt="Lywo Character" style={{width:150, height:150}}/>
+        </a>
       </div>
     )
   }

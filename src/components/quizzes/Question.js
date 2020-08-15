@@ -28,8 +28,8 @@ export default class Question extends Component {
     const {question, getNextQuestionCallback} = this.props;
     return (
       <div>
-        <h3>Question</h3>
         <div className="question-card">
+          <h3>Question</h3>
           <p>{question.questionDesc}</p>
           <div className="answer-options">
             {question.options.map((option, index) => (
@@ -51,26 +51,12 @@ export default class Question extends Component {
           </div>
         </div>
         {this.state.showAnswer &&
-          <div className="flex-column">
-            <div id="result-next-container">
-              <h4>Answer is 
-                { this.state.correctAnswer ?  
-                <strong className="correct-result-text"> Correct <span role="img" aria-label="Congratz">🎉</span></strong> 
-                :<strong className="incorrect-result-text"> Incorrect <span role="img" aria-label="Congratz">❌</span></strong> }
-              </h4>
-              <button id="btn-next-question" className="btn btn-light" 
-              onClick={this.onNextQuestionClicked.bind(this, getNextQuestionCallback)}>
-                Next Question
-              </button>
-            </div>
-            
-          
-          
           <Answer answerDetails={{
             answerExplanation:question.answerExplanation, 
-            answerHTML:question.answerHTML
+            answerHTML:question.answerHTML,
+            answerIsCorrect: this.state.correctAnswer,
+            onNextQuestionClicked: this.onNextQuestionClicked.bind(this, getNextQuestionCallback)
           }}/>
-          </div>
         }
       </div>
     )
