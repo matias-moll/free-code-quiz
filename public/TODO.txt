@@ -1,15 +1,27 @@
 TODO:
 
-- Add integration to show code snippets in the answers.
+- Add integration with FireBase for repository.
+
+- Add Unit testing
+
+- Add Score component
+
+- Add category component
 
 - Add animations to transition from user selection to answer
 
-- Add better styling for lywos text.
-
-- Add integration with FireBase for repository.
-
-- Add Twitter integration
+- Add Twitter integration to share correct answers record and also for each answer.
 
 - Work on LeaderBoard
 
+- Adapt some more styles (text size, options size, etc) for mobile
+
 - Make the site usable for desktop.
+
+
+
+Wish:
+
+- Add integration to show code snippets in the answers.
+
+-

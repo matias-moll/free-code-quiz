@@ -103,9 +103,6 @@ main{
 }
 
 /* Lywo */
-#lywo-container{
-  display:flex;
-}
 
 #lywo-message{
   margin-top:0.8em;
@@ -118,7 +115,7 @@ main{
 /* Questions */
 
 .question-card{
-  padding: 0.5em 1em;
+  padding: 0.5em 0.75em;
   max-width:400px;
   border:1px solid var(--primary-color);
   font-size:large;
@@ -194,6 +191,11 @@ main{
 }
 .flex{
   display:flex;
+}
+
+.flex-wrap{
+  display:flex;
+  flex-wrap:wrap;
 }
 
 

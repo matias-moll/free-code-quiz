@@ -23,7 +23,7 @@ export default class Lywo extends Component {
   render() {
     const { hint } = this.props;
     return (
-      <div id="lywo-container">
+      <div className="flex">
         <div>
           <p id="lywo-message"> {this.state.showHint? hint : 
             (<span>I´m <span className="primary-color">Lywo</span> and I will be your guide! I hope you have fun while learning.
