@@ -98,5 +98,33 @@ export function getQuestions(){
       answerExplanation: "The <head> element is a container for metadata (data about data), it contains between several things the <title> (which is required in every HTML document).",
       answerHTML: ""
     },
+    {
+      category: "HTML",
+      questionDesc: "What is the difference between the tags <ul> and <ol>?",
+      options: [
+        "unit list, other lists",
+        "universal list, ordered list",
+        "unordered list, outstanding list",
+        "unordered list, ordered list"
+      ],
+      correctAnswer: 3,
+      hint: "The correct pair answer has to do with order.",
+      answerExplanation: "The tags <ul> and <ol> are used for lists, and their difference is the first one is for lists without order and ol is for ordered lists.",
+      answerHTML: ""
+    },
+    {
+      category: "Javascript",
+      questionDesc: "What is a Mixin used for?",
+      options: [
+        "Creating objs from blueprint",
+        "Injecting dependencies",
+        "Sharing methods between classes",
+        "Work with collections easily"
+      ],
+      correctAnswer: 2,
+      hint: "Mixins encapsulate behaviour.",
+      answerExplanation: "A mixin is a class containing methods that can be used by other classes without a need to inherit from it.",
+      answerHTML: ""
+    },
   ]
 }
