@@ -14,9 +14,9 @@ TODO:
 
 - Work on LeaderBoard
 
-- Adapt some more styles (text size, options size, etc) for mobile
-
-- Make the site usable for desktop.
+- Make the site usable for desktop. 
+	Started with this. Missing: Text scalation and home is done. 
+	Continue with about and colaborate. About sections loading from the side. Colaborate 2 columns 1 for form other for image and text.
 
 
 

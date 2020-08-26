@@ -137,8 +137,9 @@ main{
 }
 .answer-option {
   border: 1px solid;
-  cursor:pointer;
-  padding: 0.5rem;
+  cursor: pointer;
+  padding: 0.8rem;
+  font-size: larger;
   border-radius: 1rem;
   border: 2px #c4c4c4 solid;
   color:black;
@@ -253,6 +254,11 @@ main{
     grid-template-columns: 1fr;
     padding: 0.5rem;
   }
+  .answer-option{
+    padding: 0.5rem;
+    font-size: 1rem;
+  }
+
 }
 
 @media (max-width:1200px){
@@ -301,7 +307,6 @@ main{
 
   .answer-option{
     width: 90%;
-    font-size: 1rem;
   }
 
 } 
