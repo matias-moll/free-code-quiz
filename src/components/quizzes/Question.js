@@ -36,7 +36,7 @@ export default class Question extends Component {
               this.state.showAnswer ?
               (
                 <div key={index} 
-                className={"answer-option " + (index === question.correctAnswer ? 
+                className={"answer-option answered " + (index === question.correctAnswer ? 
                   "correct-answer" : (index === this.state.optionSelected)? "incorrect-answer": "")}>
                   <span>{option} </span>
                 </div>

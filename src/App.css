@@ -46,7 +46,7 @@ p a:hover{
 }
 
 h1{
-  margin:0.75em auto;
+  margin:0.75rem auto;
 }
 
 .hidden{
@@ -67,12 +67,11 @@ h1{
 
 /* Topbar*/
 #topbar .navbar{
-  padding-left: 10%;
-  padding-right: 10%;
+  padding: 0.5rem 20%;
 }
 
 .navbar-nav .nav-link {
-  margin: auto 1em;
+  margin: auto 1rem;
 }
 
 #navbarNav{
@@ -81,11 +80,7 @@ h1{
   border-radius:10px;
 }
 
-@media (max-width:980px){
-  #navbarNav{
-    background-color: var(--background-color-for-text);
-  }
-}
+
 /* Main Container */
 .app{
   background-color:#1E1E1E;
@@ -95,7 +90,7 @@ h1{
 }
 
 main{
-  width:80%;
+  width:60%;
   margin:auto;
   display:grid;
   grid-auto-rows: max-content;
@@ -105,9 +100,9 @@ main{
 /* Lywo */
 
 #lywo-message{
-  margin-top:0.8em;
+  margin-top:0.8rem;
   background-color: var(--background-color-for-text);
-  padding: 0.5em 1.5em;
+  padding: 0.5rem 1.5rem;
   border-radius: 25px;
 }
 
@@ -115,49 +110,57 @@ main{
 /* Questions */
 
 .question-card{
-  padding: 0.5em 0.75em;
-  max-width:400px;
+  padding: 0.5rem 0.75rem;
   border:1px solid var(--primary-color);
   font-size:large;
   box-shadow: 0 -2px 10px rgba(0, 0, 0, 1);
   background-color: var(--background-color-for-text);
-  margin: 0.75em 0;
+  margin: 0.75rem 0;
 }
 
 .question-card h3{
-  margin-bottom: 0.5em;
+  margin-bottom: 0.5rem;
 }
 
 .answer-options{
-  display:flex;
-  flex-direction: column;
+  display: grid;
+  grid-gap: 2rem;
+  grid-template-columns: 1fr 1fr;
   text-align:center;
-  padding:10px 10px 0px 10px;
+  padding: 1rem;
 }
 
-.answer-option:hover{
+.answer-option:hover:not(.answered){
   cursor:pointer;
+  background-color: #c4c4c4;
+  border-color:black;
 }
 .answer-option {
   border: 1px solid;
-  overflow: hidden;
-  position: relative;
   cursor:pointer;
-  display:block;
-  margin-bottom:10px;
-  padding:7px;
-  border-radius: 25px;
+  padding: 0.5rem;
+  border-radius: 1rem;
+  border: 2px #c4c4c4 solid;
   color:black;
   font-weight: 700;
   background-color:#E6E6E6;
+  width: 400px;
+  margin: auto;
+  transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out;
+}
+
+.answered{
+  cursor: default;
 }
 
 .correct-answer{
   background-color: var(--correct-answer-color);
+  border-color:var(--correct-answer-color);
 }
 
 .incorrect-answer{
   background-color: var(--incorrect-answer-color);
+  border-color:var(--incorrect-answer-color);
 }
 
 .correct-result-text{
@@ -172,13 +175,13 @@ main{
   border-radius:25px;
   margin-left:auto;
   float:right;
-  padding: 0.35em;
+  padding: 0.35rem;
 }
 
 #result-next-container{
   display:flex;
   align-items:center;
-  margin: 1em 0 1.25em 0;
+  margin: 1rem 0 1.25rem 0;
 }
 
 .result-answer-text{
@@ -201,16 +204,16 @@ main{
 
 /* Collaborate */
 #question-input{
-  margin:2.5em auto;
+  margin:2.5rem auto;
 }
 .input-pair{
   display:flex;
   flex-direction:column;
-  margin-bottom:0.6em;
+  margin-bottom:0.6rem;
 }
 
 .input-section{
-  margin-top: 1.5em;
+  margin-top: 1.5rem;
 }
 
 .flexed-space-between{
@@ -219,7 +222,7 @@ main{
 }
 
 #btn-collaborate{
-  margin-top:1em;
+  margin-top:1rem;
   font-weight: 700;
   font-size: large;
   
@@ -240,12 +243,67 @@ main{
 
 /* About */
 
-@media (max-width:490px){
+
+
+/* Media Queries */
+
+@media (max-width:1510px){
+  .answer-options{
+    grid-gap: 1rem;
+    grid-template-columns: 1fr;
+    padding: 0.5rem;
+  }
+}
+
+@media (max-width:1200px){
+  #topbar .navbar{
+    padding: 0.5rem 15%;
+  }
+  main{
+    width:70%;
+  }
+}
+
+@media (max-width:990px){
+  #navbarNav{
+    background-color: var(--background-color-for-text);
+  }
+}
+
+@media (max-width:800px){
+  #topbar .navbar{
+    padding: 0.5rem 10%;
+  }
+  main{
+    width:80%;
+  }
+}
+
+
+@media (max-width:600px){
   #lywo-image{
     display: none;
   }
+
+  #topbar .navbar{
+    padding: 0.5rem 10%;
+  }
+
+  main{
+    width:90%;
+  }
+
+  .answer-options{
+    grid-gap: 0.5rem;
+    grid-template-columns: 1fr;
+    padding: 0.2rem;
+  }
+
+  .answer-option{
+    width: 90%;
+    font-size: 1rem;
+  }
+
 } 
-
-
 
 
