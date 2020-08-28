@@ -65,6 +65,10 @@ h1{
   color: var(--primary-color);
 }
 
+.clickable{
+  cursor:pointer;
+}
+
 /* Topbar*/
 #topbar .navbar{
   padding: 0.5rem 20%;
@@ -106,6 +110,13 @@ main{
   border-radius: 25px;
 }
 
+#lywo-message-container{
+  width:30%;
+}
+ 
+#lywo-tiny{
+  display:none;
+}
 
 /* Questions */
 
@@ -124,7 +135,7 @@ main{
 
 .answer-options{
   display: grid;
-  grid-gap: 2rem;
+  grid-gap: 2.5rem 0rem;
   grid-template-columns: 1fr 1fr;
   text-align:center;
   padding: 1rem;
@@ -145,7 +156,7 @@ main{
   color:black;
   font-weight: 700;
   background-color:#E6E6E6;
-  width: 400px;
+  width: 450px;
   margin: auto;
   transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out;
 }
@@ -200,6 +211,11 @@ main{
 .flex-wrap{
   display:flex;
   flex-wrap:wrap;
+}
+
+.flex-centered{
+  display:flex;
+  justify-content:center;
 }
 
 
@@ -259,6 +275,10 @@ main{
     font-size: 1rem;
   }
 
+  #lywo-message-container {
+    width: 50%;
+  }
+
 }
 
 @media (max-width:1200px){
@@ -289,6 +309,14 @@ main{
 @media (max-width:600px){
   #lywo-image{
     display: none;
+  }
+
+  #lywo-tiny{
+    display:inline;
+  }
+
+  #lywo-message-container {
+    width: 80%;
   }
 
   #topbar .navbar{
