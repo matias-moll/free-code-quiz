@@ -6,6 +6,7 @@
   --incorrect-answer-color: #fc806d;
   --primary-color: #d9b064;
   --primary-darker-color: #b5852d;
+  font-size: 20px;
 }
 
 /* Base Styles*/
@@ -18,9 +19,8 @@
 
 body{
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background: #fff;
   color:#000;
-  font-size:15px;
+  font-size: 17px;
   line-height:1.5;
 }
 
@@ -33,8 +33,14 @@ body a{
   text-decoration: none !important;
 }
 
+
+
 a{
   text-decoration: none !important;
+}
+
+p{
+  font-size:larger;
 }
 
 p a{
@@ -67,6 +73,30 @@ h1{
 
 .clickable{
   cursor:pointer;
+}
+
+.flex-column{
+  display:flex;
+  flex-direction:column;
+}
+.flex{
+  display:flex;
+}
+
+.flex-wrap{
+  display:flex;
+  flex-wrap:wrap;
+}
+
+.flex-centered{
+  display:flex;
+  justify-content:center;
+}
+
+.grid-responsive-columns{
+  display:grid;
+  grid-template-columns: auto 1fr;
+  column-gap:1.5rem;
 }
 
 /* Topbar*/
@@ -108,6 +138,7 @@ main{
   background-color: var(--background-color-for-text);
   padding: 0.5rem 1.5rem;
   border-radius: 25px;
+  font-size:medium;
 }
 
 #lywo-message-container{
@@ -135,7 +166,7 @@ main{
 
 .answer-options{
   display: grid;
-  grid-gap: 2.5rem 0rem;
+  grid-gap: 2.5rem 0.5rem;
   grid-template-columns: 1fr 1fr;
   text-align:center;
   padding: 1rem;
@@ -187,7 +218,7 @@ main{
   border-radius:25px;
   margin-left:auto;
   float:right;
-  padding: 0.35rem;
+  padding: 0.5rem;
 }
 
 #result-next-container{
@@ -200,23 +231,6 @@ main{
   margin-bottom: 0.2rem;
 }
 
-.flex-column{
-  display:flex;
-  flex-direction:column;
-}
-.flex{
-  display:flex;
-}
-
-.flex-wrap{
-  display:flex;
-  flex-wrap:wrap;
-}
-
-.flex-centered{
-  display:flex;
-  justify-content:center;
-}
 
 
 /* Collaborate */
@@ -294,6 +308,18 @@ main{
   #navbarNav{
     background-color: var(--background-color-for-text);
   }
+  
+  .hidden-small{
+    display:none;
+  }
+
+  .grid-responsive-columns{
+    grid-template-columns: 1fr;
+  }
+
+  #lywo-about{
+    display:none;
+  }
 }
 
 @media (max-width:800px){
@@ -320,7 +346,7 @@ main{
   }
 
   #topbar .navbar{
-    padding: 0.5rem 10%;
+    padding: 0.5rem 5%;
   }
 
   main{
@@ -340,3 +366,39 @@ main{
 } 
 
 
+/* Animations */
+
+
+#article-about-FCQ {
+  transform: translateX(-20%);
+  -webkit-transform: translateX(-20%);
+  opacity: 0;
+  will-change: transform;
+}
+
+#article-about-contribute {
+  transform: translateX(20%);
+  -webkit-transform: translateX(20%);
+  opacity: 0;
+  will-change: transform;
+}
+
+
+.slide-in {
+  animation: slide-in 1.5s forwards;
+  -webkit-animation: slide-in 1.5s forwards;
+}
+
+.slide-in-delayed {
+  animation: slide-in 2s forwards 1.5s;
+  -webkit-animation: slide-in 2s forwards 1.5s;
+}
+
+
+@keyframes slide-in {
+  100% { transform: translateX(0%); opacity: 1;}
+}
+
+@-webkit-keyframes slide-in {
+  100% { -webkit-transform: translateX(0%); }
+}
