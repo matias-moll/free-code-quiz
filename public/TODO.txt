@@ -1,10 +1,5 @@
 TODO:
 
-- Make the site usable for desktop. 
-	Move Collaborate button to the right side of Join us on desktop and to the right side of the title on mobile.
-	Add animations to the loading of the form.
-	Adjust shrine image size.
-
 - Add integration with FireBase for repository (Get questions from there)
 
 - Add Unit testing

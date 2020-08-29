@@ -23,9 +23,9 @@ export default class Lywo extends Component {
   render() {
     const { hint } = this.props;
     return (
-      <div className="flex-centered">
+      <div className="flex-centered transparent appear">
         <div id="lywo-message-container" className="clickable">
-          <p id="lywo-message" onClick={this.onLywoClicked}> {this.state.showHint? hint : 
+          <p id="lywo-message" onClick={this.onLywoClicked}> {this.state.showHint?  (<span className="transparent appear">{hint}</span>  ) : 
             (<span>I´m <span className="primary-color">Lywo </span><img id="lywo-tiny" src={lywoImg} alt="Lywo Character" style={{width:30, height:30}}/> and I will be your guide!
             I hope you have fun while learning.
              You can tap on me for hints.</span>)}

@@ -16,7 +16,7 @@ export default class Contribute extends Component {
           </button>
         </div>
         <div className="grid-main-side">
-          <form action="" id="form-contribute">
+          <form action="" id="form-contribute" className="transparent appear-slow">
             <div id="question-input" className="input-pair">
               <label htmlFor="question"><strong>Question: </strong></label>
               <input type="text" name="question" id="questionField" maxlength="90"/>
@@ -31,6 +31,7 @@ export default class Contribute extends Component {
                 </div>
               ))}
 
+              
               <div id="correct-option" className="input-pair input-section">
                 <label htmlFor="correctOption"><strong>Correct Option: </strong></label>
                 <input type="number" name="correctOption" id="correctOptionField" min="1" max="4"/>
@@ -61,7 +62,7 @@ export default class Contribute extends Component {
             </div>
           </form>
 
-          <div id="side-info">
+          <div id="side-info" className="come-from-right slide-in-delayed">
             
             <p className="mt-3"> You can become a contributor to Free Code Quiz! Submit your question, we will then review it and let you know if it is approved!</p>
             <div>
@@ -72,7 +73,7 @@ export default class Contribute extends Component {
               
               <p>If you are a passionate developer looking to collaborate in an Open Source project this is your opportunity. We have a lot of features planned ready for you to jump in. Free Code Quiz is waiting for you!</p>
             </div>
-            <img id="shrine" src={shrineImg} alt="Shrine" style={{width:200, height:200}}/>
+            <img id="shrine" src={shrineImg} alt="Shrine" style={{width:250, height:250}}/>
           </div>
         </div>
         

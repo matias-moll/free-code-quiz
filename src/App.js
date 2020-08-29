@@ -8,6 +8,7 @@ import Scoreboard from './scoreboard/Scoreboard'
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import './App.css';
 import './Background.css';
+import './BaseStyles.css';
 
 function App() {
   return (

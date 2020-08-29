@@ -27,7 +27,7 @@ export default class Question extends Component {
   render() {
     const {question, getNextQuestionCallback} = this.props;
     return (
-      <div>
+      <div className="transparent appear">
         <div className="question-card">
           <h3>Question</h3>
           <p>{question.questionDesc}</p>

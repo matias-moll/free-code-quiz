@@ -5,7 +5,7 @@ export default class Answer extends Component {
     const {answerExplanation, answerHTML, 
       answerIsCorrect, onNextQuestionClicked} = this.props.answerDetails;
     return (
-      <div className="question-card">
+      <div className="question-card transparent appear-fast">
         <div id="result-next-container">
           <div className="flex-wrap">
             <div className="mr-2">

@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import Question from './Question'
-import Result from './Result'
 import Lywo from './Lywo'
 import { getQuestions } from './QuestionsState'
 
@@ -27,7 +26,6 @@ export default class Quizzes extends Component {
       <div>
         <Lywo hint={this.state.questions[this.state.currentQuestionIndex].hint}/>
         <Question question={this.state.questions[this.state.currentQuestionIndex]}  getNextQuestionCallback={this.getNextQuestionCallback} />
-        <Result/>
       </div>
     )
   }
