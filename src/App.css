@@ -93,10 +93,27 @@ h1{
   justify-content:center;
 }
 
+.grid-two-columns{
+  display: grid;
+  grid-gap: 1rem 2.5rem;
+  grid-template-columns: 1fr 1fr;
+}
+
 .grid-responsive-columns{
   display:grid;
   grid-template-columns: auto 1fr;
   column-gap:1.5rem;
+}
+
+.grid-main-side{
+  display:grid;
+  grid-template-columns: 1fr 0.5fr;
+  column-gap:1.5rem;
+}
+
+.centered-90{
+  width: 90%;
+  margin: auto;
 }
 
 /* Topbar*/
@@ -152,7 +169,7 @@ main{
 /* Questions */
 
 .question-card{
-  padding: 0.5rem 0.75rem;
+  padding: 1rem 1.5rem;
   border:1px solid var(--primary-color);
   font-size:large;
   box-shadow: 0 -2px 10px rgba(0, 0, 0, 1);
@@ -219,6 +236,7 @@ main{
   margin-left:auto;
   float:right;
   padding: 0.5rem;
+  font-size: 1rem;
 }
 
 #result-next-container{
@@ -233,14 +251,25 @@ main{
 
 
 
-/* Collaborate */
+/* Contribute */
+#form-contribute{
+  background-color: rgba(38, 152, 249, 0.3);
+  /* background-color: rgba(48, 64, 81, 0.8); */
+  border-radius: 10%;
+  padding: 2rem 2.5rem;
+  margin: 1rem 0;
+}
+
 #question-input{
-  margin:2.5rem auto;
+  margin: 1rem auto 2.5rem;
 }
 .input-pair{
   display:flex;
   flex-direction:column;
   margin-bottom:0.6rem;
+}
+.input-pair input[type=number]{
+  max-width:60px;
 }
 
 .input-section{
@@ -272,6 +301,13 @@ main{
   color: white;
 }
 
+#side-info{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+
 /* About */
 
 
@@ -293,14 +329,22 @@ main{
     width: 50%;
   }
 
-}
-
-@media (max-width:1200px){
   #topbar .navbar{
     padding: 0.5rem 15%;
   }
   main{
     width:70%;
+  }
+
+}
+
+/* Mid size desktop */
+@media (max-width:1200px){
+  #topbar .navbar{
+    padding: 0.5rem 10%;
+  }
+  main{
+    width:80%;
   }
 }
 
@@ -320,18 +364,17 @@ main{
   #lywo-about{
     display:none;
   }
-}
 
-@media (max-width:800px){
   #topbar .navbar{
-    padding: 0.5rem 10%;
+    padding: 0.5rem 5%;
   }
+
   main{
-    width:80%;
+    width:90%;
   }
 }
 
-
+/* Mobile + Lowest on desktop */
 @media (max-width:600px){
   #lywo-image{
     display: none;
@@ -341,16 +384,25 @@ main{
     display:inline;
   }
 
+  p{
+    font-size: medium;
+  }
+
+  h4{
+    font-size: 1.3rem;
+  }
+
+  .question-card{
+    padding: 0.5rem 0.75rem;
+  }
+
+  #btn-next-question{
+    padding: 0.3rem;
+    font-size: 0.9rem;
+  }
+
   #lywo-message-container {
     width: 80%;
-  }
-
-  #topbar .navbar{
-    padding: 0.5rem 5%;
-  }
-
-  main{
-    width:90%;
   }
 
   .answer-options{
@@ -358,7 +410,6 @@ main{
     grid-template-columns: 1fr;
     padding: 0.2rem;
   }
-
   .answer-option{
     width: 90%;
   }
@@ -366,8 +417,10 @@ main{
 } 
 
 
-/* Animations */
 
+
+
+/* Animations */
 
 #article-about-FCQ {
   transform: translateX(-20%);
