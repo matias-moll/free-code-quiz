@@ -1,8 +1,10 @@
 TODO:
 
-- Add integration with FireBase for repository.
+- Add integration with FireBase for repository (Get questions from there)
 
 - Add Unit testing
+
+- Add integration with Firebase to save contributions for review.
 
 - Add Score component
 
@@ -12,16 +14,22 @@ TODO:
 
 - Add Twitter integration to share correct answers record and also for each answer.
 
-- Work on LeaderBoard
-
 - Make the site usable for desktop. 
 	Started with this. Missing: Text scalation and home is done. 
 	Continue with about and colaborate. About sections loading from the side. Colaborate 2 columns 1 for form other for image and text.
 
+- Add much more questions
+
+- Add counter of hits to the page.
+
+- Buy domain.
+
+- Deploy it
 
 
 Wish:
 
 - Add integration to show code snippets in the answers.
 
--
+
+- Work on LeaderBoard
