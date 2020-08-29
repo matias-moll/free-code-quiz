@@ -1,5 +1,10 @@
 TODO:
 
+- Make the site usable for desktop. 
+	Move Collaborate button to the right side of Join us on desktop and to the right side of the title on mobile.
+	Add animations to the loading of the form.
+	Adjust shrine image size.
+
 - Add integration with FireBase for repository (Get questions from there)
 
 - Add Unit testing
@@ -10,13 +15,9 @@ TODO:
 
 - Add category component
 
-- Add animations to transition from user selection to answer
+- Add animations to quizzes
 
 - Add Twitter integration to share correct answers record and also for each answer.
-
-- Make the site usable for desktop. 
-	Started with this. Missing: Text scalation and home is done. 
-	Continue with about and colaborate. About sections loading from the side. Colaborate 2 columns 1 for form other for image and text.
 
 - Add much more questions
 
@@ -31,5 +32,6 @@ Wish:
 
 - Add integration to show code snippets in the answers.
 
+- Improve visuals of contribute form.
 
 - Work on LeaderBoard

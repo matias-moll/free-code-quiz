@@ -255,8 +255,8 @@ main{
 #form-contribute{
   background-color: rgba(38, 152, 249, 0.3);
   /* background-color: rgba(48, 64, 81, 0.8); */
-  border-radius: 10%;
-  padding: 2rem 2.5rem;
+  border-radius: 5%;
+  padding: 1rem 1.5rem;
   margin: 1rem 0;
 }
 
@@ -339,12 +339,19 @@ main{
 }
 
 /* Mid size desktop */
-@media (max-width:1200px){
+@media (max-width:1250px){
   #topbar .navbar{
     padding: 0.5rem 10%;
   }
   main{
     width:80%;
+  }
+
+  #side-info{
+    display: none;
+  }
+  .grid-main-side{
+    grid-template-columns: 1fr;
   }
 }
 
@@ -372,6 +379,7 @@ main{
   main{
     width:90%;
   }
+
 }
 
 /* Mobile + Lowest on desktop */
@@ -412,6 +420,15 @@ main{
   }
   .answer-option{
     width: 90%;
+  }
+
+  #grid-inputs-contribute{
+    grid-template-columns: 1fr;
+    width:100%;
+  }
+  #form-contribute{
+    border-radius: 0;
+    padding: 0.5rem 0.75rem;
   }
 
 } 

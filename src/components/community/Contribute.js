@@ -18,7 +18,7 @@ export default class Contribute extends Component {
               <input type="text" name="question" id="questionField" maxlength="90"/>
             </div>
 
-            <div className="grid-two-columns centered-90">
+            <div id="grid-inputs-contribute" className="grid-two-columns centered-90">
 
               { options.map((elem,index) => (
                 <div className="input-pair" key={index}>
@@ -60,10 +60,10 @@ export default class Contribute extends Component {
 
           <div id="side-info">
             
-            <p className="mt-3"> You can become a contributor to Free Code Quiz! Simply submit your question here and we will review it and let you know if it is approved!</p>
+            <p className="mt-3"> You can become a contributor to Free Code Quiz! Submit your question, we will then review it and let you know if it is approved!</p>
             <div>
               <h4> Join Us </h4>
-              <p>If you are a passionate developer looking to collaborate to an Open Source project but you have a hard time starting, this is your opportunity. We have a lot of features planned that are waiting for you. And some small tweaks and bugs too. Free Code Quiz is waiting for you!</p>
+              <p>If you are a passionate developer looking to collaborate in an Open Source project this is your opportunity. We have a lot of features planned ready for you to jump in. Free Code Quiz is waiting for you!</p>
             </div>
             <img id="shrine" src={shrineImg} alt="Shrine" style={{width:200, height:200}}/>
           </div>
