@@ -7,9 +7,13 @@ export default class Contribute extends Component {
     const options = ["option1", "option2", "option3", "option4"];
     return (
       <div>
-        <h1><span className="page-title">Contribute</span></h1>
-        <div className="flex">
-          
+        <div className="flex-space-between">
+          <h1><span className="page-title">Contribute</span></h1>
+          <button id="btn-github-header" className="btn btn-primary btn-github mt-4 mb-2">
+            <a href="https://github.com/matias-moll/free-code-quiz">
+              <i class="fab fa-github"></i> <span className="hidden-extrasmall">Collaborate</span>
+            </a>
+          </button>
         </div>
         <div className="grid-main-side">
           <form action="" id="form-contribute">
@@ -18,7 +22,7 @@ export default class Contribute extends Component {
               <input type="text" name="question" id="questionField" maxlength="90"/>
             </div>
 
-            <div id="grid-inputs-contribute" className="grid-two-columns centered-90">
+            <div id="grid-inputs-contribute" className="grid-two-columns centered-90 small-100">
 
               { options.map((elem,index) => (
                 <div className="input-pair" key={index}>
@@ -52,9 +56,8 @@ export default class Contribute extends Component {
 
             </div>
            
-            <div className="flexed-space-between mt-3 centered-90">
-              <input id="btn-collaborate" className="btn btn-primary mt-3" type="submit" value="Submit!"/>
-              <button id="btn-github" className="btn btn-primary mt-3"><a href="https://github.com/matias-moll/free-code-quiz"><i class="fab fa-github"></i> Collaborate</a></button>
+            <div className="flex-centered mt-3 centered-90 small-100">
+              <input id="btn-collaborate" className="btn btn-primary mt-3 small-100" type="submit" value="Submit!"/>
             </div>
           </form>
 
@@ -62,7 +65,11 @@ export default class Contribute extends Component {
             
             <p className="mt-3"> You can become a contributor to Free Code Quiz! Submit your question, we will then review it and let you know if it is approved!</p>
             <div>
-              <h4> Join Us </h4>
+              <div className="flex-space-between">
+                <h4> Join Us </h4>
+                <button id="btn-github-side" className="btn btn-primary btn-github"><a href="https://github.com/matias-moll/free-code-quiz"><i class="fab fa-github"></i> Collaborate</a></button>
+              </div>
+              
               <p>If you are a passionate developer looking to collaborate in an Open Source project this is your opportunity. We have a lot of features planned ready for you to jump in. Free Code Quiz is waiting for you!</p>
             </div>
             <img id="shrine" src={shrineImg} alt="Shrine" style={{width:200, height:200}}/>

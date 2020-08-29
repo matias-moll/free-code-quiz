@@ -52,7 +52,7 @@ p a:hover{
 }
 
 h1{
-  margin:0.75rem auto;
+  margin:0.75rem;
 }
 
 .hidden{
@@ -86,6 +86,11 @@ h1{
 .flex-wrap{
   display:flex;
   flex-wrap:wrap;
+}
+
+.flex-space-between{
+  display: flex;
+  justify-content: space-between;
 }
 
 .flex-centered{
@@ -276,16 +281,12 @@ main{
   margin-top: 1.5rem;
 }
 
-.flexed-space-between{
-  display: flex;
-  justify-content: space-between;
-}
-
 #btn-collaborate{
   margin-top:1rem;
+  margin-bottom: 0.5rem;
   font-weight: 700;
   font-size: large;
-  
+  width:250px;
 }
 .btn-primary{
   background-color: #b5852d;
@@ -297,7 +298,7 @@ main{
   border-color:#88621b;
 }
 
-#btn-github>a{
+.btn-github>a{
   color: white;
 }
 
@@ -307,6 +308,17 @@ main{
   align-items: center;
   justify-content: space-around;
 }
+#btn-github-side{
+  padding: 0.35rem 0.5rem;
+  font-size: 0.8rem;
+  height: 80%;
+}
+
+#btn-github-header{
+  display:none;
+}
+
+
 
 /* About */
 
@@ -352,6 +364,9 @@ main{
   }
   .grid-main-side{
     grid-template-columns: 1fr;
+  }
+  #btn-github-header{
+    display:inline;
   }
 }
 
@@ -422,14 +437,23 @@ main{
     width: 90%;
   }
 
+  .small-100{
+    width:100% !important;
+  }
+
   #grid-inputs-contribute{
     grid-template-columns: 1fr;
-    width:100%;
+    grid-gap: 0;
   }
   #form-contribute{
     border-radius: 0;
     padding: 0.5rem 0.75rem;
   }
+  
+  .hidden-extrasmall{
+    display:none;
+  }
+  
 
 } 
 
