@@ -126,5 +126,33 @@ export function getQuestions(){
       answerExplanation: "A mixin is a class containing methods that can be used by other classes without a need to inherit from it.",
       answerHTML: ""
     },
+    {
+      category: "Javascript",
+      questionDesc: "Which of the following are part of the 6 primitive data types? (latest ECMAScript Standard)",
+      options: [
+        "Float, Char",
+        "Bit, Double",
+        "BigInt, undefined",
+        "Object, null"
+      ],
+      correctAnswer: 2,
+      hint: "Structure data types are not primitive data types.",
+      answerExplanation: "BigInt and undefined are primitive data types. More info here: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures",
+      answerHTML: ""
+    },
+    {
+      category: "Javascript",
+      questionDesc: "How can you get a new array removing duplicates from an array colors?",
+      options: [
+        "[new Set(colors)]",
+        "[... new Set(colors)]",
+        "new Map(colors)",
+        "[...colors]"
+      ],
+      correctAnswer: 1,
+      hint: "A Set is a data structure that doesn't allow duplicates.",
+      answerExplanation: "Creating a set from the array removes the duplicates, then spread operator gets 1 by 1 the elements to put them back into an array.",
+      answerHTML: ""
+    },
   ]
 }
