@@ -21,7 +21,7 @@ export default function Question({question, getNextQuestionCallback}) {
     <div className="transparent appear">
       <div className="question-card">
         <h3>Question</h3>
-        <p>{question.questionDesc}</p>
+        <p>{question.question}</p>
         <div className="answer-options">
           {question.options.map((option, index) => (
             showAnswer ?
