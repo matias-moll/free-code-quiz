@@ -5,7 +5,6 @@ export default function Topbar() {
     <div id="topbar">
       <nav className="navbar navbar-expand-lg navbar-dark sticky-top">
         <a className="navbar-brand" href="/">
-          {/* Add icon here*/}
           Free Code Quiz
         </a>
         <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
