@@ -1,64 +1,55 @@
-import React, { Component } from 'react'
+import React from 'react'
 import Answer from './Answer'
 
-export default class Question extends Component {
-  state = {
-    showAnswer:false,
-    optionSelected: -1,
-    correctAnswer:false,
+export default function Question({question, getNextQuestionCallback}) {
+  const[showAnswer, setShowAnswer] = React.useState(false);
+  const[optionSelected, setOptionSelected] = React.useState(-1);
+  const[correctAnswer, setCorrectAnswer] = React.useState(false);
+
+  const onOptionSelected = (indexSelected, correctAnswerIndex) => {
+    setShowAnswer(true);
+    setOptionSelected(indexSelected);
+    setCorrectAnswer(indexSelected===correctAnswerIndex);
   }
 
-  isAnswerCorrect = () =>{
-    return this.optionSelected
-  }
-  onOptionSelected = (indexSelected, correctAnswerIndex) => {
-    this.setState({showAnswer:true, optionSelected : indexSelected, 
-                  correctAnswer: indexSelected===correctAnswerIndex});
-  }
-
-  onNextQuestionClicked = (getNextQuestionCallback) =>{
-    this.setState({
-      ...this.state, 
-      showAnswer: false});
-
+  const onNextQuestionClicked = (getNextQuestionCallback) =>{
+    setShowAnswer(false);
     getNextQuestionCallback();
   }
 
-  render() {
-    const {question, getNextQuestionCallback} = this.props;
-    return (
-      <div className="transparent appear">
-        <div className="question-card">
-          <h3>Question</h3>
-          <p>{question.questionDesc}</p>
-          <div className="answer-options">
-            {question.options.map((option, index) => (
-              this.state.showAnswer ?
-              (
-                <div key={index} 
-                className={"answer-option answered " + (index === question.correctAnswer ? 
-                  "correct-answer" : (index === this.state.optionSelected)? "incorrect-answer": "")}>
-                  <span>{option} </span>
-                </div>
-              ):
-              (
-              <div key={index} className="answer-option" onClick={this.onOptionSelected.bind(this, index, question.correctAnswer)}>
-                <span>{option}</span>
+  return (
+    <div className="transparent appear">
+      <div className="question-card">
+        <h3>Question</h3>
+        <p>{question.questionDesc}</p>
+        <div className="answer-options">
+          {question.options.map((option, index) => (
+            showAnswer ?
+            (
+              <div key={index} 
+              className={"answer-option answered " + (index === question.correctAnswer ? 
+                "correct-answer" : (index === optionSelected)? "incorrect-answer": "")}>
+                <span>{option} </span>
               </div>
-              )
-            ))}
-            
-          </div>
+            ):
+            (
+            <div key={index} className="answer-option" onClick={() => onOptionSelected(index, question.correctAnswer)}>
+              <span>{option}</span>
+            </div>
+            )
+          ))}
+          
         </div>
-        {this.state.showAnswer &&
-          <Answer answerDetails={{
-            answerExplanation:question.answerExplanation, 
-            answerHTML:question.answerHTML,
-            answerIsCorrect: this.state.correctAnswer,
-            onNextQuestionClicked: this.onNextQuestionClicked.bind(this, getNextQuestionCallback)
-          }}/>
-        }
       </div>
-    )
-  }
+      {showAnswer &&
+        <Answer answerDetails={{
+          answerExplanation:question.answerExplanation, 
+          answerHTML:question.answerHTML,
+          answerIsCorrect: correctAnswer,
+          onNextQuestionClicked: () => onNextQuestionClicked(getNextQuestionCallback)
+        }}/>
+      }
+    </div>
+  )
+  
 }

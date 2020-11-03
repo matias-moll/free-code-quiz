@@ -1,32 +1,31 @@
-import React, { Component } from 'react'
+import React from 'react'
 import Question from './Question'
 import Lywo from './Lywo'
 import { getQuestions } from './QuestionsState'
 
-export default class Quizzes extends Component {
-  state= {
-    questions: getQuestions(),
-    currentQuestionIndex: 0
-  }
+export default function Quizzes() {
+  const [questions, setQuestions] = React.useState(getQuestions());
+  const [currentQuestionIndex, setCurrentQuestionIndex] = React.useState(0);
 
-  getNextQuestionCallback = () =>{
-    let nextQuestionIndex = this.state.currentQuestionIndex+1;
-    if(nextQuestionIndex >= this.state.questions.length){
+  React.useEffect(() => {
+    // API Call here
+    //setQuestions(getQuestions());
+  }, []);
+
+  const getNextQuestionCallback = () =>{
+    let nextQuestionIndex = currentQuestionIndex+1;
+    if (nextQuestionIndex >= questions.length){
       alert("There are no more questions! Thanks for playing");
-    }else{
-      this.setState({
-        ...this.state, 
-        currentQuestionIndex: nextQuestionIndex })
+    } else {
+      setCurrentQuestionIndex(nextQuestionIndex)
     }
     
   }
 
-  render() {
-    return (
-      <div>
-        <Lywo hint={this.state.questions[this.state.currentQuestionIndex].hint}/>
-        <Question question={this.state.questions[this.state.currentQuestionIndex]}  getNextQuestionCallback={this.getNextQuestionCallback} />
-      </div>
-    )
-  }
+  return (
+    <div>
+      <Lywo hint={questions[currentQuestionIndex].hint}/>
+      <Question question={questions[currentQuestionIndex]}  getNextQuestionCallback={getNextQuestionCallback} />
+    </div>
+  )
 }
